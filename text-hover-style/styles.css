@@ -1,0 +1,46 @@
+:root {
+  --background: radial-gradient(
+    circle,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(150, 70, 252, 1) 91%
+  );
+  --text-color: #3f0a48;
+  --line-height: 1.5;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.list-item {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: center;
+  line-height: var(--line-height);
+}
+
+.list-item:hover {
+  height: calc(var(--line-height) * 0.5em);
+  /* overflow: hidden; */
+}
+
+.list-item:hover::before {
+  content: attr(data-text);
+  height: calc(var(--line-height) * 0.5em);
+  overflow: hidden;
+}
